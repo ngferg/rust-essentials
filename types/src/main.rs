@@ -12,6 +12,7 @@ fn main() {
     println!("Hello, world!");
     println!("Invoking demo_ints! {}", demo_ints());
     println!("electron voltage: {:e}", demo_floats());
+    println!("invoking simple types {}", simple_types());
 }
 
 fn demo_ints() -> i64 {
@@ -35,4 +36,22 @@ fn demo_floats() -> f64 {
     println!("padded left: {:0<10.2} right: {:0>10.2}", pi2, pi2);
 
     return sci;
+}
+
+fn simple_types() -> bool {
+    let is_murican = true;
+    let can_sing = false;
+
+    let is_murican_numeric = is_murican as i32;
+    let can_sing_numeric = can_sing as i32;
+
+    println!("bools! {} {} as int {} {}", is_murican, can_sing, is_murican_numeric, can_sing_numeric);
+    println!("and {} or {} not {}", is_murican && can_sing, is_murican || can_sing, !is_murican);
+
+    let middle_initial: char = 'G';
+    let cool_guy: char = '😎';
+
+    println!("chars! {} {}", middle_initial, cool_guy);
+
+    return is_murican;
 }
