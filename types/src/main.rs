@@ -11,6 +11,7 @@
 fn main() {
     println!("Hello, world!");
     println!("Invoking demo_ints! {}", demo_ints());
+    println!("electron voltage: {:e}", demo_floats());
 }
 
 fn demo_ints() -> i64 {
@@ -22,4 +23,16 @@ fn demo_ints() -> i64 {
     println!("some ints {} {} {} {}", sixty_four_bit_int, a1, a2, b1);
 
     return sixty_four_bit_int;
+}
+
+fn demo_floats() -> f64 {
+    let pi: f32 = 3.14159;
+    let pi2: f64 = 3.14159;
+    let sci: f64 = -1.602176e-16;
+
+    println!("pi's: {:.2} {}", pi, pi2);
+    println!("left: {:<10.2} right: {:>10.2}", pi2, pi2);
+    println!("padded left: {:0<10.2} right: {:0>10.2}", pi2, pi2);
+
+    return sci;
 }
