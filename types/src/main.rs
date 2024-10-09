@@ -8,11 +8,14 @@
 // use computer word size (hi perf)
 // isize         usize
 
+const SECONDS_IN_HOUR: i32 = 3_600; // underscore is ignored, can use as seperateor like commas for big nums
+
 fn main() {
     println!("Hello, world!");
     println!("Invoking demo_ints! {}", demo_ints());
     println!("electron voltage: {:e}", demo_floats());
     println!("invoking simple types {}", simple_types());
+    extras();
 }
 
 fn demo_ints() -> i64 {
@@ -54,4 +57,28 @@ fn simple_types() -> bool {
     println!("chars! {} {}", middle_initial, cool_guy);
 
     return is_murican;
+}
+
+fn extras() {
+    //infered types
+    let a = 1;
+    let b = 3.14;
+    let c = true;
+
+    //imutable by default, gotta declare mut to make it changable
+    let mut d;
+    d = 2;
+    d = 4; // no ++ operator, gotta +=
+    d += 1;
+
+    // prefix with underscre for compiler to not warn you about unused vars
+    let _f = 0;
+
+    let g = 3.99;
+    let h = g as i32; //conversions with as
+
+    let num = "123";
+    let num = num.parse::<i32>().unwrap();
+
+    println!("{} {} {} {} {} {} {} {}", a, b, c, d, g, h, num, SECONDS_IN_HOUR);
 }
